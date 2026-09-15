@@ -1,0 +1,91 @@
+import { Link, Navigate, useParams } from 'react-router-dom'
+import RequireMode from '../components/RequireMode'
+import { productStories } from '../data/content'
+
+function ProductStoryContent() {
+  const { slug } = useParams()
+  const story = productStories[slug]
+
+  if (!story) return <Navigate to="/work" replace />
+
+  return (
+    <section className="section container">
+      <p className="eyebrow">Product Story</p>
+      <h1 className="page-title">{story.name}</h1>
+      <p className="archive-entry__meta story-meta">{story.meta}</p>
+      {story.role && <p className="story-role measure">{story.role}</p>}
+      {story.tools && <p className="story-tools">Tools: {story.tools}</p>}
+      {story.confidentialNote && <p className="story-confidential measure">{story.confidentialNote}</p>}
+
+      {story.sections.map((section) => (
+        <div className="story-block" key={section.label || section.problem.slice(0, 20)}>
+          {section.label && <p className="story-block__label">{section.label}</p>}
+
+          <div className="story-field">
+            <p className="story-field__label">The problem</p>
+            <p className="story-block__text">{section.problem}</p>
+          </div>
+
+          {section.role && (
+            <div className="story-field">
+              <p className="story-field__label">My role</p>
+              <p className="story-block__text">{section.role}</p>
+            </div>
+          )}
+
+          <div className="story-field">
+            <p className="story-field__label">What I changed</p>
+            <p className="story-block__text">{section.change}</p>
+          </div>
+
+          <div className="story-field">
+            <p className="story-field__label">Why it mattered</p>
+            <p className="story-block__text">{section.why}</p>
+          </div>
+
+          <div className="story-field">
+            <p className="story-field__label">Evidence</p>
+            <p className="story-block__text">{section.evidenceNote}</p>
+            {section.evidenceHeadline && (
+              <div className="story-evidence">
+                <div>
+                  <span className="archive-entry__evidence-num">{section.evidenceHeadline.number}</span>
+                  <span className="archive-entry__evidence-label">{section.evidenceHeadline.label}</span>
+                </div>
+              </div>
+            )}
+            {section.evidenceStats && (
+              <div className="story-evidence">
+                {section.evidenceStats.map((stat) => (
+                  <div key={stat.label}>
+                    <span className="archive-entry__evidence-num">{stat.number}</span>
+                    <span className="archive-entry__evidence-label">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {section.closingLine && <p className="story-closing measure">&ldquo;{section.closingLine}&rdquo;</p>}
+        </div>
+      ))}
+
+      <div className="story-footer">
+        <Link className="text-link" to="/work">
+          ← Back to Work
+        </Link>
+        <Link className="btn" to="/contact">
+          Contact Laura →
+        </Link>
+      </div>
+    </section>
+  )
+}
+
+export default function ProductStory() {
+  return (
+    <RequireMode>
+      <ProductStoryContent />
+    </RequireMode>
+  )
+}

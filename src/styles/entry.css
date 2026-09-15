@@ -1,0 +1,98 @@
+.entry {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.entry__inner {
+  padding-block: clamp(3rem, 10vh, 6rem);
+  width: 100%;
+}
+
+.entry__label {
+  margin-bottom: 1.75rem;
+}
+
+.entry__name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 5vw, 3.25rem);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  max-width: 42rem;
+}
+
+.entry__question {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  color: var(--color-ink-soft);
+  margin-top: 1.5rem;
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.entry__routes {
+  display: flex;
+  flex-direction: column;
+}
+
+.entry-route {
+  display: grid;
+  grid-template-columns: 3rem 10rem 1fr;
+  align-items: baseline;
+  gap: 0.5rem 1.75rem;
+  width: 100%;
+  text-align: left;
+  padding-block: clamp(1.5rem, 3.5vw, 2.25rem);
+  border-top: var(--rule-thin) solid var(--color-rule);
+  transition: background var(--dur-fast) var(--ease-editorial), padding-left var(--dur-base) var(--ease-editorial);
+}
+
+.entry-route:last-child {
+  border-bottom: var(--rule-thin) solid var(--color-rule);
+}
+
+.entry-route:hover,
+.entry-route:focus-visible {
+  background: var(--color-surface);
+  padding-left: 0.75rem;
+}
+
+.entry-route__number {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  color: var(--color-ink-faint);
+  grid-row: 1;
+}
+
+.entry-route__label {
+  font-family: var(--font-sans);
+  font-size: var(--fs-nav);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-ink-faint);
+  grid-row: 1;
+}
+
+.entry-route__line {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 3.5vw, 2.1rem);
+  line-height: var(--lh-tight);
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+.entry-route__sub {
+  font-family: var(--font-sans);
+  font-size: var(--fs-support);
+  color: var(--color-ink-soft);
+  grid-column: 1 / -1;
+  grid-row: 3;
+  margin-top: 0.35rem;
+  max-width: 34rem;
+}
+
+@media (max-width: 620px) {
+  .entry-route {
+    grid-template-columns: 2.25rem 1fr;
+  }
+}
