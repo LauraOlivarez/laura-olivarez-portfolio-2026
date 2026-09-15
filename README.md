@@ -21,13 +21,9 @@ npm install
 npm run dev
 ```
 
-## Contact form
+## Contact
 
-The Contact page posts to a third-party form endpoint (no backend on a
-static Vite site). Copy `.env.example` to `.env` and set
-`VITE_CONTACT_FORM_ENDPOINT` to a form endpoint (e.g. a Formspree form)
-that forwards submissions by email. Without it configured, the form will
-show an error on submit.
+The Contact page is a single LinkedIn link — no form, no backend.
 
 ## Deployment (Hostinger)
 
@@ -35,9 +31,7 @@ show an error on submit.
    Auto Deploy / Git).
 2. Confirm the build output directory is set to `dist` (Vite's default) —
    not `build`, which is Create React App's folder name.
-3. Set the `VITE_CONTACT_FORM_ENDPOINT` build environment variable in the
-   Hostinger panel.
-4. Every push to `main` auto-redeploys.
+3. Every push to `main` auto-redeploys.
 
 ## Assets
 
