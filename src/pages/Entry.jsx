@@ -40,7 +40,10 @@ export default function Entry() {
     <main className="entry">
       <div className="container entry__inner">
         <p className="eyebrow entry__label">The Clarity System</p>
-        <h1 className="entry__name">Laura Olivarez — Senior Product &amp; UX Designer</h1>
+        <h1 className="entry__name">
+          Laura Olivarez
+          <span className="entry__role">Senior Product &amp; UX Designer</span>
+        </h1>
         <p className="entry__question">What brings you here?</p>
 
         <div className="entry__routes" role="list">

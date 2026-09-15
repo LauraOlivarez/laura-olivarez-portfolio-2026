@@ -19,6 +19,16 @@
   font-weight: 500;
   line-height: var(--lh-tight);
   max-width: 42rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.entry__role {
+  font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-ink-soft);
+  margin-top: 0.5rem;
 }
 
 .entry__question {
