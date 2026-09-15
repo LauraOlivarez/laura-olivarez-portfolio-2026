@@ -141,6 +141,17 @@
   border-top: var(--rule-thin) solid var(--color-rule);
 }
 
+.archive-entry--link {
+  text-decoration: none;
+  transition: background var(--dur-fast) var(--ease-editorial), padding-left var(--dur-base) var(--ease-editorial);
+}
+
+.archive-entry--link:hover,
+.archive-entry--link:focus-visible {
+  background: var(--color-surface);
+  padding-left: 0.75rem;
+}
+
 .archive-entry:last-child {
   border-bottom: var(--rule-thin) solid var(--color-rule);
 }

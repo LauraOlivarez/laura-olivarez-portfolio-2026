@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import Entry from './pages/Entry'
 import Home from './pages/Home'
 import Work from './pages/Work'
+import ProductStoriesIndex from './pages/ProductStoriesIndex'
 import ProductStory from './pages/ProductStory'
 import Thinking from './pages/Thinking'
 import Lab from './pages/Lab'
@@ -20,6 +21,7 @@ export default function App() {
             <Routes>
               <Route path="home" element={<Home />} />
               <Route path="work" element={<Work />} />
+              <Route path="product-stories" element={<ProductStoriesIndex />} />
               <Route path="product-stories/:slug" element={<ProductStory />} />
               <Route path="thinking" element={<Thinking />} />
               <Route path="lab" element={<Lab />} />

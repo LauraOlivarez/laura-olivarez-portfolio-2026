@@ -266,7 +266,7 @@ export const rooms = [
   {
     key: 'product-stories',
     label: 'Product Stories',
-    path: '/product-stories/verivox',
+    path: '/product-stories',
     desc: 'The full depth behind each case study: problem, role, what changed, why it mattered.',
   },
 ]
