@@ -277,5 +277,5 @@ Typeset in Newsreader and Geist. Built with more care than deadline pressure usu
 
 If something here still feels like it's finding its shape — so am I. This site changes as I do.`
 
-export const linkedInUrl = 'https://linkedin.com/lauraolivarez'
+export const linkedInUrl = 'https://www.linkedin.com/in/lauraolivarez/'
 export const resumeUrl = '/Laura-Olivarez-Resume.pdf'
