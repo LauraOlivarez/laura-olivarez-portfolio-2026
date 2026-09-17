@@ -18,7 +18,7 @@ function ProductStoryContent() {
       {story.confidentialNote && <p className="story-confidential measure">{story.confidentialNote}</p>}
 
       {story.sections.map((section) => (
-        <div className="story-block" key={section.label || section.problem.slice(0, 20)}>
+        <div className="story-block" id={section.anchorId} key={section.label || section.problem.slice(0, 20)}>
           {section.label && <p className="story-block__label">{section.label}</p>}
 
           <div className="story-field">
@@ -33,7 +33,7 @@ function ProductStoryContent() {
             </div>
           )}
 
-          <div className="story-field">
+          <div className="story-field" id={section.changeAnchorId}>
             <p className="story-field__label">What I changed</p>
             <p className="story-block__text">{section.change}</p>
             {section.image && (

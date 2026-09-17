@@ -8,21 +8,25 @@ export const evidence = [
     number: '15%',
     label: 'Completion',
     desc: 'Increase in completed submissions following a trust-focused UX experiment (Verivox).',
+    href: '/product-stories/verivox#trust-microcopy',
   },
   {
     number: '60→10',
     label: 'Preparation',
     desc: 'Reduction in prep time enabled by systems built for repeatable, scalable decisions.',
+    href: '/product-stories/dility#what-changed',
   },
   {
     number: '30+',
     label: 'Validation',
     desc: 'Rounds of user testing and validation run across product and process work.',
+    href: '/product-stories/dility#what-changed',
   },
   {
     number: '0→1',
     label: 'Ownership',
     desc: 'Full-scope product ownership, from first concept to shipped platform (dility).',
+    href: '/product-stories/dility#what-changed',
   },
 ]
 
@@ -88,6 +92,7 @@ export const productStories = {
         imageAlt: 'Before and after comparison of the Verivox post sign-up flow on mobile — the redesigned version consolidates loan details, next steps, and actions into a clearer, less cluttered screen.',
       },
       {
+        anchorId: 'trust-microcopy',
         label: 'Section B — Building Trust Through UX Microcopy',
         problem:
           'Users were hesitant to complete the credit sign-up form due to missing data security messaging.',
@@ -110,6 +115,7 @@ export const productStories = {
         label: null,
         problem:
           'An early-stage SaaS platform needed to translate complex, human-facilitated workshop and collaboration workflows into intuitive, scalable digital experiences.',
+        changeAnchorId: 'what-changed',
         change:
           'Ran continuous user research and usability testing loops to refine workflows; introduced agile working practices; shaped and communicated the product vision and value proposition to investors; represented the company externally, negotiating strategic partnerships.',
         why: 'After an early pivot (the original concept was too narrow) and a year-long delay before that pivot, the team confronted a defining question during their last accelerator — "Are we solving the one problem that causes enough pain for people to pay for it?" They realized they\'d been solving too many problems instead of the one that mattered.',
