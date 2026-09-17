@@ -1,6 +1,8 @@
 // Shared content layer. Recruiter / Design-Product / Explore modes, and every
 // page, read from this single source — no per-mode content duplication.
 
+import verivoxPostSignupTeaser from '../assets/images/verivox-post-signup-teaser.jpg'
+
 export const evidence = [
   {
     number: '15%',
@@ -36,6 +38,8 @@ export const projects = [
     evidence: { number: '15%', label: 'Completion' },
     teaserPlaceholder:
       'TEASER IMAGE — Verivox: interface fragment or flow from the sign-up process or trust-microcopy work (e.g. a redacted screen, a flow diagram, or a UI detail). Avoid stock photography — should read as a real design artifact.',
+    teaserImage: verivoxPostSignupTeaser,
+    teaserImageAlt: 'Before and after comparison of the Verivox post sign-up flow on mobile — the redesigned version consolidates loan details, next steps, and actions into a clearer, less cluttered screen.',
   },
   {
     slug: 'dility',
@@ -80,6 +84,8 @@ export const productStories = {
         why: 'Reduced complexity for users navigating varied bank requirements, and reduced backend maintenance effort as a secondary benefit.',
         evidenceNote:
           'Tested iteratively with users through to design freeze; conversion monitored post-launch. There is no single headline number for this piece specifically — this is process-based evidence, not a metric.',
+        image: verivoxPostSignupTeaser,
+        imageAlt: 'Before and after comparison of the Verivox post sign-up flow on mobile — the redesigned version consolidates loan details, next steps, and actions into a clearer, less cluttered screen.',
       },
       {
         label: 'Section B — Building Trust Through UX Microcopy',

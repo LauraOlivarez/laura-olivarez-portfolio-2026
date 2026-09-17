@@ -36,6 +36,9 @@ function ProductStoryContent() {
           <div className="story-field">
             <p className="story-field__label">What I changed</p>
             <p className="story-block__text">{section.change}</p>
+            {section.image && (
+              <img className="story-image" src={section.image} alt={section.imageAlt} loading="lazy" />
+            )}
           </div>
 
           <div className="story-field">

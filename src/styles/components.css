@@ -101,6 +101,13 @@
   text-align: center;
 }
 
+.archive-entry__teaser-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: var(--rule-thin) solid var(--color-rule-strong);
+}
+
 /* Formula blocks (Process — the arc of a project) */
 .formula {
   border-top: var(--rule-thin) solid var(--color-rule);

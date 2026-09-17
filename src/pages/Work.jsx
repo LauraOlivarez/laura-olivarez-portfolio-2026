@@ -34,7 +34,16 @@ function WorkContent() {
                   </Link>
                 </div>
               </div>
-              <TeaserPlaceholder text={project.teaserPlaceholder} />
+              {project.teaserImage ? (
+                <img
+                  className="archive-entry__teaser-image"
+                  src={project.teaserImage}
+                  alt={project.teaserImageAlt}
+                  loading="lazy"
+                />
+              ) : (
+                <TeaserPlaceholder text={project.teaserPlaceholder} />
+              )}
             </div>
           </article>
         ))}

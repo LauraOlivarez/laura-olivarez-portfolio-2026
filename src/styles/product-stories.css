@@ -42,6 +42,13 @@
   margin-bottom: 0.4rem;
 }
 
+.story-image {
+  width: 100%;
+  max-width: 44rem;
+  border: var(--rule-thin) solid var(--color-rule-strong);
+  margin-top: 1.25rem;
+}
+
 .story-closing {
   font-family: var(--font-serif);
   font-style: italic;
