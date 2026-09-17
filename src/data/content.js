@@ -37,7 +37,7 @@ export const projects = [
     recruiterDesc: 'Making complex financial decisions easier to trust.',
     evidence: { number: '15%', label: 'Completion' },
     teaserPlaceholder:
-      'TEASER IMAGE — Verivox: interface fragment or flow from the sign-up process or trust-microcopy work (e.g. a redacted screen, a flow diagram, or a UI detail). Avoid stock photography — should read as a real design artifact.',
+      'COMING SOON: image of the credit sign-up form trust microcopy experiment (15% increase in submissions).',
     teaserImage: verivoxPostSignupTeaser,
     teaserImageAlt: 'Before and after comparison of the Verivox post sign-up flow on mobile — the redesigned version consolidates loan details, next steps, and actions into a clearer, less cluttered screen.',
   },
@@ -51,7 +51,7 @@ export const projects = [
     recruiterDesc: 'Building clarity into a remote workshop platform.',
     evidence: { number: '0→1', label: 'Ownership' },
     teaserPlaceholder:
-      'TEASER IMAGE — dility: workshop canvas, product architecture, or prototype fragment from the platform. Should read as a real design artifact, not stock photography.',
+      "COMING SOON: image of dility's participant onboarding, method library, and agenda creation — the workflows behind the 60→10 minute reduction.",
   },
   {
     slug: 'teamworx-security',
@@ -63,7 +63,7 @@ export const projects = [
     recruiterDesc: 'Bringing audit rigor and 0-to-1 systems to a fast-moving security platform.',
     evidence: null,
     teaserPlaceholder:
-      'TEASER IMAGE — TeamWorx Security: a UX audit scoring artifact, a component from the design system built 0-to-1, or a workflow/system structure visual. Should read as a real design artifact, not stock photography.',
+      'COMING SOON: image of the UX audit scoring framework — Impact Score grading system (A–D) and example scoring breakdown, illustrated with sample data.',
   },
 ]
 
