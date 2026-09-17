@@ -3,20 +3,54 @@ import { useLocation } from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
 
+function highlightElement(el, prefersReducedMotion) {
+  el.classList.remove('anchor-highlight--fade')
+  // Force reflow so re-adding the class restarts the highlight if the
+  // same anchor is navigated to again.
+  void el.offsetWidth
+  el.classList.add('anchor-highlight')
+
+  const fadeDelay = prefersReducedMotion ? 60 : 450
+  const cleanupDelay = fadeDelay + (prefersReducedMotion ? 150 : 1700)
+
+  const fadeTimer = window.setTimeout(() => {
+    el.classList.add('anchor-highlight--fade')
+  }, fadeDelay)
+
+  const cleanupTimer = window.setTimeout(() => {
+    el.classList.remove('anchor-highlight', 'anchor-highlight--fade')
+  }, cleanupDelay)
+
+  return () => {
+    window.clearTimeout(fadeTimer)
+    window.clearTimeout(cleanupTimer)
+  }
+}
+
 export default function Layout({ children }) {
   const location = useLocation()
 
   useEffect(() => {
     if (location.hash) {
       const id = decodeURIComponent(location.hash.slice(1))
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      let cancelHighlight
+
       const scrollToTarget = () => {
         const el = document.getElementById(id)
-        if (el) el.scrollIntoView({ block: 'start' })
-        else window.scrollTo(0, 0)
+        if (!el) {
+          window.scrollTo(0, 0)
+          return
+        }
+        el.scrollIntoView({ block: 'start', behavior: prefersReducedMotion ? 'auto' : 'smooth' })
+        cancelHighlight = highlightElement(el, prefersReducedMotion)
       }
       // Wait a tick for the new page's content to be in the DOM.
-      requestAnimationFrame(scrollToTarget)
-      return
+      const raf = requestAnimationFrame(scrollToTarget)
+      return () => {
+        cancelAnimationFrame(raf)
+        if (cancelHighlight) cancelHighlight()
+      }
     }
     window.scrollTo(0, 0)
   }, [location.pathname, location.hash])

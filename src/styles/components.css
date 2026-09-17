@@ -428,3 +428,18 @@
   margin-top: 1rem;
 }
 
+/* Anchor-jump highlight: flashes the section a Recruiter evidence stat
+   linked to, then fades. Bleeds slightly past the text so it reads as a
+   highlighted passage rather than a tight background box. */
+.anchor-highlight {
+  background-color: rgba(156, 59, 38, 0.16);
+  margin-inline: -0.9rem;
+  padding-inline: 0.9rem;
+  border-radius: 4px;
+}
+
+.anchor-highlight.anchor-highlight--fade {
+  background-color: transparent;
+  transition: background-color 1.6s ease-out;
+}
+
