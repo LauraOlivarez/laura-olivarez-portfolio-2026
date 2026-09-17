@@ -271,7 +271,7 @@ export const rooms = [
   },
 ]
 
-export const colophon = `This site was designed and built in collaboration with Claude, using Claude Code, and hosted on Hostinger — because a portfolio about turning complexity into clarity should be honest about its own process, tools included.
+export const colophon = `This site was designed and built in collaboration with Claude, using Claude Code, and hosted on Vercel — because a portfolio about turning complexity into clarity should be honest about its own process, tools included.
 
 Typeset in Newsreader and Geist. Built with more care than deadline pressure usually allows.
 

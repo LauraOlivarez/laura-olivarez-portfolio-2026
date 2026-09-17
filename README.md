@@ -25,12 +25,12 @@ npm run dev
 
 The Contact page is a single LinkedIn link — no form, no backend.
 
-## Deployment (Hostinger)
+## Deployment (Vercel)
 
-1. Connect this GitHub repo to Hostinger's hosting panel (Website →
-   Auto Deploy / Git).
-2. Confirm the build output directory is set to `dist` (Vite's default) —
-   not `build`, which is Create React App's folder name.
+1. Import this GitHub repo into Vercel as a new project.
+2. Vercel auto-detects the Vite framework preset — confirm the build
+   command is `vite build` and the output directory is `dist` (Vite's
+   default) — not `build`, which is Create React App's folder name.
 3. Every push to `main` auto-redeploys.
 
 ## Assets
