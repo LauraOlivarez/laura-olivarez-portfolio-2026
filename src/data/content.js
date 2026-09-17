@@ -120,11 +120,11 @@ export const productStories = {
           'Ran continuous user research and usability testing loops to refine workflows; introduced agile working practices; shaped and communicated the product vision and value proposition to investors; represented the company externally, negotiating strategic partnerships.',
         why: 'After an early pivot (the original concept was too narrow) and a year-long delay before that pivot, the team confronted a defining question during their last accelerator — "Are we solving the one problem that causes enough pain for people to pay for it?" They realized they\'d been solving too many problems instead of the one that mattered.',
         evidenceNote:
-          '20% increase in user satisfaction; 5 Letters of Intent (LOIs) validating early market demand; 20% reduction in project timelines from agile process changes; 25% increase in positive stakeholder feedback during fundraising. The company did not secure the funding needed to scale further, and did not reach the outcome the team had hoped for.',
+          '20% increase in user satisfaction; 5 Letters of Intent (LOIs) validating early market demand; reduced workshop setup time from roughly 60 minutes to 10 by simplifying fragmented preparation workflows and creating reusable product patterns; 25% increase in positive stakeholder feedback during fundraising. The company did not secure the funding needed to scale further, and did not reach the outcome the team had hoped for.',
         evidenceStats: [
           { number: '20%', label: 'User satisfaction' },
           { number: '5', label: 'Letters of Intent' },
-          { number: '20%', label: 'Timeline reduction' },
+          { number: '60→10', label: 'Prep time (minutes)' },
           { number: '25%', label: 'Stakeholder feedback' },
         ],
         closingLine: 'Recurring users are the real proof of value — not just for investors, but for yourself.',
