@@ -42,6 +42,11 @@ export default function Layout({ children }) {
           window.scrollTo(0, 0)
           return
         }
+        // The target can be a nested sentence <span>, so set scroll-margin
+        // directly on it rather than relying on an ancestor's CSS — an
+        // ancestor's scroll-margin doesn't apply when scrollIntoView is
+        // called on the descendant itself.
+        el.style.scrollMarginTop = '5.5rem'
         el.scrollIntoView({ block: 'start', behavior: prefersReducedMotion ? 'auto' : 'smooth' })
         cancelHighlight = highlightElement(el, prefersReducedMotion)
       }

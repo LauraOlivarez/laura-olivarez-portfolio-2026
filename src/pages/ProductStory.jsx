@@ -2,6 +2,19 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import RequireMode from '../components/RequireMode'
 import { productStories } from '../data/content'
 
+// Some fields (a sentence-highlight target for the Recruiter evidence
+// links) are an array of { text, id? } segments instead of a plain
+// string — id gives that sentence its own anchor to scroll/highlight.
+function renderSegments(value) {
+  if (typeof value === 'string' || value == null) return value
+  return value.map((segment, i) => (
+    <span id={segment.id} key={segment.id || i}>
+      {segment.text}
+      {i < value.length - 1 ? ' ' : ''}
+    </span>
+  ))
+}
+
 function ProductStoryContent() {
   const { slug } = useParams()
   const story = productStories[slug]
@@ -13,12 +26,12 @@ function ProductStoryContent() {
       <p className="eyebrow">Product Story</p>
       <h1 className="page-title">{story.name}</h1>
       <p className="archive-entry__meta story-meta">{story.meta}</p>
-      {story.role && <p className="story-role measure">{story.role}</p>}
+      {story.role && <p className="story-role measure">{renderSegments(story.role)}</p>}
       {story.tools && <p className="story-tools">Tools: {story.tools}</p>}
       {story.confidentialNote && <p className="story-confidential measure">{story.confidentialNote}</p>}
 
       {story.sections.map((section) => (
-        <div className="story-block" id={section.anchorId} key={section.label || section.problem.slice(0, 20)}>
+        <div className="story-block" key={section.label || section.problem.slice(0, 20)}>
           {section.label && <p className="story-block__label">{section.label}</p>}
 
           <div className="story-field">
@@ -33,7 +46,7 @@ function ProductStoryContent() {
             </div>
           )}
 
-          <div className="story-field" id={section.changeAnchorId}>
+          <div className="story-field">
             <p className="story-field__label">What I changed</p>
             <p className="story-block__text">{section.change}</p>
             {section.image && (
@@ -48,7 +61,7 @@ function ProductStoryContent() {
 
           <div className="story-field">
             <p className="story-field__label">Evidence</p>
-            <p className="story-block__text">{section.evidenceNote}</p>
+            <p className="story-block__text">{renderSegments(section.evidenceNote)}</p>
             {section.evidenceHeadline && (
               <div className="story-evidence">
                 <div>

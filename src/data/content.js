@@ -8,25 +8,25 @@ export const evidence = [
     number: '15%',
     label: 'Completion',
     desc: 'Increase in completed submissions following a trust-focused UX experiment (Verivox).',
-    href: '/product-stories/verivox#trust-microcopy',
+    href: '/product-stories/verivox#form-submissions-15',
   },
   {
     number: '60→10',
     label: 'Preparation',
     desc: 'Reduction in prep time enabled by systems built for repeatable, scalable decisions.',
-    href: '/product-stories/dility#what-changed',
+    href: '/product-stories/dility#prep-time-60-10',
   },
   {
     number: '30+',
     label: 'Validation',
     desc: 'Rounds of user testing and validation run across product and process work.',
-    href: '/product-stories/dility#what-changed',
+    href: '/product-stories/dility#research-sessions-30',
   },
   {
     number: '0→1',
     label: 'Ownership',
     desc: 'Full-scope product ownership, from first concept to shipped platform (dility).',
-    href: '/product-stories/dility#what-changed',
+    href: '/product-stories/dility#true-0-to-1',
   },
 ]
 
@@ -92,7 +92,6 @@ export const productStories = {
         imageAlt: 'Before and after comparison of the Verivox post sign-up flow on mobile — the redesigned version consolidates loan details, next steps, and actions into a clearer, less cluttered screen.',
       },
       {
-        anchorId: 'trust-microcopy',
         label: 'Section B — Building Trust Through UX Microcopy',
         problem:
           'Users were hesitant to complete the credit sign-up form due to missing data security messaging.',
@@ -100,8 +99,13 @@ export const productStories = {
         change:
           'Added "Your data is safe and encrypted" near the input fields, testing placement (above vs. below), tone, and color.',
         why: 'A small copy change addressing trust in a privacy-sensitive flow — reduced friction and signaled transparency about data handling.',
-        evidenceNote:
-          '15% increase in form submissions. No secondary metrics or qualitative feedback are available beyond this figure — user testing during development was run by a different department. That is a scope boundary, not a gap.',
+        evidenceNote: [
+          { text: '15% increase in form submissions.', id: 'form-submissions-15' },
+          {
+            text: 'No secondary metrics or qualitative feedback are available beyond this figure — user testing during development was run by a different department.',
+          },
+          { text: 'That is a scope boundary, not a gap.' },
+        ],
         evidenceHeadline: { number: '15%', label: 'Form submissions' },
       },
     ],
@@ -109,18 +113,33 @@ export const productStories = {
   dility: {
     name: 'dility',
     meta: 'Co-Founder & Head of UX Strategy — May 2022 – Dec 2024, Remote, Worldwide',
-    role: 'Co-Founder & Head of UX Strategy — full ownership across product design, user research, team leadership/agile operations, fundraising/investor engagement, and external partnerships. True 0-to-1, both product and company-building.',
+    role: [
+      {
+        text: 'Co-Founder & Head of UX Strategy — full ownership across product design, user research, team leadership/agile operations, fundraising/investor engagement, and external partnerships.',
+      },
+      { text: 'True 0-to-1, both product and company-building.', id: 'true-0-to-1' },
+    ],
     sections: [
       {
         label: null,
         problem:
           'An early-stage SaaS platform needed to translate complex, human-facilitated workshop and collaboration workflows into intuitive, scalable digital experiences.',
-        changeAnchorId: 'what-changed',
         change:
           'Ran continuous user research and usability testing loops to refine workflows; introduced agile working practices; shaped and communicated the product vision and value proposition to investors; represented the company externally, negotiating strategic partnerships.',
         why: 'After an early pivot (the original concept was too narrow) and a year-long delay before that pivot, the team confronted a defining question during their last accelerator — "Are we solving the one problem that causes enough pain for people to pay for it?" They realized they\'d been solving too many problems instead of the one that mattered.',
-        evidenceNote:
-          '20% increase in user satisfaction; 5 Letters of Intent (LOIs) validating early market demand; reduced workshop setup time from roughly 60 minutes to 10 by simplifying fragmented preparation workflows and creating reusable product patterns; 25% increase in positive stakeholder feedback during fundraising. 30+ user research sessions, totaling 1,200+ hours of validation. The company did not secure the funding needed to scale further, and did not reach the outcome the team had hoped for.',
+        evidenceNote: [
+          { text: '20% increase in user satisfaction.' },
+          { text: '5 Letters of Intent (LOIs) validated early market demand.' },
+          {
+            text: 'Reduced workshop setup time from roughly 60 minutes to 10 by simplifying fragmented preparation workflows and creating reusable product patterns.',
+            id: 'prep-time-60-10',
+          },
+          { text: '25% increase in positive stakeholder feedback during fundraising.' },
+          { text: '30+ user research sessions, totaling 1,200+ hours of validation.', id: 'research-sessions-30' },
+          {
+            text: 'The company did not secure the funding needed to scale further, and did not reach the outcome the team had hoped for.',
+          },
+        ],
         evidenceStats: [
           { number: '20%', label: 'User satisfaction' },
           { number: '5', label: 'Letters of Intent' },

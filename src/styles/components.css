@@ -428,14 +428,15 @@
   margin-top: 1rem;
 }
 
-/* Anchor-jump highlight: flashes the section a Recruiter evidence stat
-   linked to, then fades. Bleeds slightly past the text so it reads as a
-   highlighted passage rather than a tight background box. */
+/* Anchor-jump highlight: flashes the sentence a Recruiter evidence stat
+   linked to, then fades — a text-marker highlight, not a block of color.
+   Padding/margin cancel out so the highlighted sentence doesn't reflow
+   the surrounding text. */
 .anchor-highlight {
-  background-color: rgba(156, 59, 38, 0.16);
-  margin-inline: -0.9rem;
-  padding-inline: 0.9rem;
-  border-radius: 4px;
+  background-color: rgba(156, 59, 38, 0.18);
+  margin: -0.05em -0.2em;
+  padding: 0.05em 0.2em;
+  border-radius: 3px;
 }
 
 .anchor-highlight.anchor-highlight--fade {
