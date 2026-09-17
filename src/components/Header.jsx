@@ -15,8 +15,10 @@ export default function Header() {
   const navigate = useNavigate()
   const [hidden, setHidden] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [showModeHint, setShowModeHint] = useState(false)
   const lastY = useRef(0)
   const pauseTimer = useRef(null)
+  const hintTimer = useRef(null)
 
   useEffect(() => {
     lastY.current = window.scrollY
@@ -47,11 +49,30 @@ export default function Header() {
     navigate('/')
   }
 
+  function handleMarkClick() {
+    if (!visitorMode) return
+    setShowModeHint(true)
+    if (hintTimer.current) clearTimeout(hintTimer.current)
+    hintTimer.current = setTimeout(() => setShowModeHint(false), 3200)
+  }
+
+  useEffect(() => {
+    return () => {
+      if (hintTimer.current) clearTimeout(hintTimer.current)
+    }
+  }, [])
+
   return (
     <header className="site-header" data-hidden={hidden ? 'true' : 'false'}>
       <div className="container site-header__inner">
         <p className="site-header__mark">
-          <Link to="/home">Laura Olivarez</Link>
+          <Link to="/home" onClick={handleMarkClick}>
+            Laura Olivarez
+          </Link>
+          <span className="mark-hint" role="status" aria-live="polite" data-visible={showModeHint ? 'true' : 'false'}>
+            {showModeHint &&
+              'This takes you back to your current view. Use "Change" (top right, or in the menu) to switch.'}
+          </span>
         </p>
 
         <nav className="site-nav" aria-label="Primary">

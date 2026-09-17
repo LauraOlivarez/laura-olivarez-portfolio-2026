@@ -106,3 +106,12 @@
     grid-template-columns: 2.25rem 1fr;
   }
 }
+
+.entry__note {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  line-height: var(--lh-snug);
+  color: var(--color-ink-faint);
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  max-width: 34rem;
+}

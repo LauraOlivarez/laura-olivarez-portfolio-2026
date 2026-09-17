@@ -62,6 +62,10 @@ export default function Entry() {
             </button>
           ))}
         </div>
+
+        <p className="entry__note">
+          If something here still feels like it&rsquo;s finding its shape — so am I. This site changes as I do.
+        </p>
       </div>
     </main>
   )
