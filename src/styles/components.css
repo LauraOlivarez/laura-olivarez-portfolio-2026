@@ -223,6 +223,35 @@
   line-height: var(--lh-tight);
 }
 
+.company-heading-link {
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+
+.company-heading-link:hover,
+.company-heading-link:focus-visible {
+  text-decoration: underline;
+  color: var(--color-accent);
+}
+
+.company-note {
+  font-family: var(--font-sans);
+  font-size: var(--fs-support);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-ink-faint);
+}
+
+.company-blurb {
+  font-family: var(--font-sans);
+  font-size: var(--fs-support);
+  font-weight: 400;
+  line-height: var(--lh-snug);
+  color: var(--color-ink-soft);
+  margin-top: 0.5rem;
+  max-width: 34rem;
+}
+
 .archive-entry__desc {
   font-family: var(--font-sans);
   font-size: var(--fs-body);

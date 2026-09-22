@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import CompanyHeading from '../components/CompanyHeading'
 import RequireMode from '../components/RequireMode'
 import TeaserPlaceholder from '../components/TeaserPlaceholder'
 import { projects } from '../data/content'
@@ -18,7 +19,8 @@ function WorkContent() {
                 <p className="archive-entry__meta">
                   {project.dates} · {project.category}
                 </p>
-                <h2 className="archive-entry__title">{project.name}</h2>
+                <CompanyHeading project={project} as="h2" className="archive-entry__title" />
+                <p className="company-blurb">{project.companyBlurb}</p>
                 <p className="archive-entry__desc">{project.shortDesc}</p>
                 {project.evidence && (
                   <div className="archive-entry__evidence">

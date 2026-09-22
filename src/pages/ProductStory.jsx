@@ -1,6 +1,7 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import CompanyHeading from '../components/CompanyHeading'
 import RequireMode from '../components/RequireMode'
-import { productStories } from '../data/content'
+import { productStories, projects } from '../data/content'
 
 // Some fields (a sentence-highlight target for the Recruiter evidence
 // links) are an array of { text, id? } segments instead of a plain
@@ -18,13 +19,15 @@ function renderSegments(value) {
 function ProductStoryContent() {
   const { slug } = useParams()
   const story = productStories[slug]
+  const project = projects.find((p) => p.slug === slug)
 
   if (!story) return <Navigate to="/work" replace />
 
   return (
     <section className="section container">
       <p className="eyebrow">Product Story</p>
-      <h1 className="page-title">{story.name}</h1>
+      <CompanyHeading project={project} as="h1" className="page-title" />
+      {project.companyBlurb && <p className="company-blurb">{project.companyBlurb}</p>}
       <p className="archive-entry__meta story-meta">{story.meta}</p>
       {story.role && <p className="story-role measure">{renderSegments(story.role)}</p>}
       {story.tools && <p className="story-tools">Tools: {story.tools}</p>}

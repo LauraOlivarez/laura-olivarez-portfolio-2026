@@ -39,6 +39,10 @@ export const projects = [
     category: 'Banking, Germany',
     shortDesc: 'Making complex financial decisions easier to trust.',
     recruiterDesc: 'Making complex financial decisions easier to trust.',
+    companyBlurb:
+      'A leading German comparison platform for energy, telecom, insurance, loans, and financial products, supporting digital comparison and switching experiences for 8M+ customers across high-trust consumer decision journeys.',
+    companyUrl: 'https://www.verivox.de/',
+    companyNote: null,
     evidence: { number: '15%', label: 'Completion' },
     teaserPlaceholder:
       'COMING SOON: image of the credit sign-up form trust microcopy experiment (15% increase in submissions).',
@@ -53,6 +57,10 @@ export const projects = [
     category: 'SaaS / Product, 0→1',
     shortDesc: 'Building clarity into a remote workshop platform.',
     recruiterDesc: 'Building clarity into a remote workshop platform.',
+    companyBlurb:
+      'Early-stage B2B SaaS platform designed to simplify remote workshop preparation, collaboration, participant onboarding, and post-workshop validation.',
+    companyUrl: null,
+    companyNote: '(site no longer live — project concluded)',
     evidence: { number: '0→1', label: 'Ownership' },
     teaserPlaceholder:
       "COMING SOON: image of dility's participant onboarding, method library, and agenda creation — the workflows behind the 60→10 minute reduction.",
@@ -65,6 +73,10 @@ export const projects = [
     category: 'Cybersecurity SaaS, 3-month engagement',
     shortDesc: 'Bringing audit rigor and 0-to-1 systems to a fast-moving security platform.',
     recruiterDesc: 'Bringing audit rigor and 0-to-1 systems to a fast-moving security platform.',
+    companyBlurb:
+      'Cybersecurity and observability dashboard project focused on risk monitoring, alert prioritization, technical workflows, and decision support for security teams.',
+    companyUrl: 'https://www.teamworxsecurity.com/',
+    companyNote: null,
     evidence: null,
     teaserPlaceholder:
       'COMING SOON: image of the UX audit scoring framework — Impact Score grading system (A–D) and example scoring breakdown, illustrated with sample data.',
