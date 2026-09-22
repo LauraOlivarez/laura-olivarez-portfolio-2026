@@ -8,6 +8,7 @@ export default function Footer() {
         <span>© {new Date().getFullYear()} Laura Olivarez</span>
         <span style={{ display: 'flex', gap: '1.5rem' }}>
           <Link to="/contact">Contact</Link>
+          <Link to="/privacy">Privacy Policy</Link>
           <a href={linkedInUrl} target="_blank" rel="noreferrer">
             LinkedIn
           </a>

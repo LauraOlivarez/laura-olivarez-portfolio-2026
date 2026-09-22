@@ -10,6 +10,7 @@ import Thinking from './pages/Thinking'
 import Lab from './pages/Lab'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
                 <Route path="lab" element={<Lab />} />
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />
+                <Route path="privacy" element={<PrivacyPolicy />} />
               </Routes>
             </Layout>
           }
