@@ -12,33 +12,12 @@
       href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap"
       rel="stylesheet"
     />
-    <script type="text/javascript">
-      (function (c, l, a, r, i, t, y) {
-        c[a] =
-          c[a] ||
-          function () {
-            (c[a].q = c[a].q || []).push(arguments)
-          }
-        t = l.createElement(r)
-        t.async = 1
-        t.src = 'https://www.clarity.ms/tag/' + i
-        y = l.getElementsByTagName(r)[0]
-        y.parentNode.insertBefore(t, y)
-      })(window, document, 'clarity', 'script', 'ymfndxstrb')
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFXTGP08JX"></script>
-    <script type="text/javascript">
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-      // Pageviews are sent manually on every route change (including the
-      // first one) by src/components/Analytics.jsx, since this is a
-      // single-page app — client-side navigation doesn't trigger gtag's
-      // automatic pageview.
-      gtag('config', 'G-QFXTGP08JX', { send_page_view: false })
-    </script>
+    <!--
+      Google Analytics (G-QFXTGP08JX) and Microsoft Clarity (ymfndxstrb)
+      are NOT loaded here. Both are gated behind cookie consent — see
+      src/lib/cookieConsent.js and src/lib/analyticsLoaders.js — and
+      only load once a visitor accepts the analytics category.
+    -->
   </head>
   <body>
     <div id="root"></div>

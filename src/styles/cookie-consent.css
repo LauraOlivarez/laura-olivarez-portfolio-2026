@@ -1,0 +1,43 @@
+/* Theme vanilla-cookieconsent to the site's editorial palette instead
+   of the library's default blue/rounded look. */
+#cc-main {
+  --cc-font-family: var(--font-sans);
+  --cc-bg: var(--color-bg);
+  --cc-primary-color: var(--color-ink);
+  --cc-secondary-color: var(--color-ink-soft);
+  --cc-btn-primary-bg: var(--color-ink);
+  --cc-btn-primary-color: var(--color-bg);
+  --cc-btn-primary-border-color: var(--color-ink);
+  --cc-btn-primary-hover-bg: var(--color-accent);
+  --cc-btn-primary-hover-color: var(--color-bg);
+  --cc-btn-primary-hover-border-color: var(--color-accent);
+  --cc-btn-secondary-bg: transparent;
+  --cc-btn-secondary-color: var(--color-ink);
+  --cc-btn-secondary-border-color: var(--color-rule-strong);
+  --cc-btn-secondary-hover-bg: var(--color-surface);
+  --cc-btn-secondary-hover-color: var(--color-ink);
+  --cc-btn-secondary-hover-border-color: var(--color-rule-strong);
+  --cc-toggle-on-bg: var(--color-ink);
+  --cc-toggle-readonly-bg: var(--color-rule-strong);
+  --cc-link-color: var(--color-accent);
+  --cc-footer-bg: var(--color-bg);
+  --cc-footer-border-color: var(--color-rule);
+  --cc-footer-color: var(--color-ink-faint);
+  --cc-separator-border-color: var(--color-rule);
+  --cc-cookie-category-block-bg: var(--color-surface);
+  --cc-cookie-category-block-border: var(--color-rule);
+  --cc-cookie-category-expanded-block-bg: var(--color-surface);
+  --cc-overlay-bg: rgba(28, 26, 23, 0.35);
+  --cc-btn-border-radius: 2px;
+  --cc-modal-border-radius: 2px;
+}
+
+#cc-main .cm__title,
+#cc-main .pm__title {
+  font-family: var(--font-serif);
+}
+
+#cc-main a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
