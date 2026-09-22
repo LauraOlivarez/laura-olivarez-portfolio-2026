@@ -33,7 +33,11 @@
         dataLayer.push(arguments)
       }
       gtag('js', new Date())
-      gtag('config', 'G-QFXTGP08JX')
+      // Pageviews are sent manually on every route change (including the
+      // first one) by src/components/Analytics.jsx, since this is a
+      // single-page app — client-side navigation doesn't trigger gtag's
+      // automatic pageview.
+      gtag('config', 'G-QFXTGP08JX', { send_page_view: false })
     </script>
   </head>
   <body>
