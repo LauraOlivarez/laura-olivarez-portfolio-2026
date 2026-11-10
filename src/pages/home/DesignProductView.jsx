@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import FormulaBlock from '../../components/FormulaBlock'
-import TeaserPlaceholder from '../../components/TeaserPlaceholder'
+import ProjectTeaser from '../../components/ProjectTeaser'
 import { philosophy, projects } from '../../data/content'
 
 const FEATURED = ['verivox', 'dility']
@@ -29,14 +29,16 @@ export default function DesignProductView() {
         <div className="work-preview-grid">
           {featured.map((project) => (
             <article className="work-preview-card" key={project.slug}>
-              <TeaserPlaceholder text={project.teaserPlaceholder} />
+              <ProjectTeaser project={project} />
               <p className="archive-entry__meta">
                 {project.name} · {project.dates} · {project.category}
               </p>
               <h3 className="work-preview-card__title">{project.shortDesc}</h3>
-              <Link className="text-link" to={`/product-stories/${project.slug}`}>
-                Read the product story →
-              </Link>
+              {!project.caseStudies && (
+                <Link className="text-link" to={`/product-stories/${project.slug}`}>
+                  Read the product story →
+                </Link>
+              )}
             </article>
           ))}
         </div>

@@ -417,6 +417,11 @@
   margin-top: 0.75rem;
 }
 
+.lab-entry__links .text-link {
+  min-height: 44px;
+  align-items: center;
+}
+
 .lab-entry__links {
   display: flex;
   flex-wrap: wrap;

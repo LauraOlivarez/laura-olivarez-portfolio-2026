@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import EvidenceGrid from '../../components/EvidenceGrid'
-import TeaserPlaceholder from '../../components/TeaserPlaceholder'
+import ProjectTeaser from '../../components/ProjectTeaser'
 import { projects, resumeUrl } from '../../data/content'
 
 const FEATURED = ['verivox', 'dility']
@@ -26,7 +26,7 @@ export default function RecruiterView() {
         <div className="work-preview-grid">
           {featured.map((project) => (
             <article className="work-preview-card" key={project.slug}>
-              <TeaserPlaceholder text={project.teaserPlaceholder} />
+              <ProjectTeaser project={project} />
               <p className="archive-entry__meta">
                 {project.name} · {project.dates}
               </p>
@@ -37,9 +37,11 @@ export default function RecruiterView() {
                   <span className="archive-entry__evidence-label">{project.evidence.label}</span>
                 </p>
               )}
-              <Link className="text-link" to={`/product-stories/${project.slug}`}>
-                Read the product story →
-              </Link>
+              {!project.caseStudies && (
+                <Link className="text-link" to={`/product-stories/${project.slug}`}>
+                  Read the product story →
+                </Link>
+              )}
             </article>
           ))}
         </div>

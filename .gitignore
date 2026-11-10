@@ -26,3 +26,9 @@ dist-ssr
 *.sln
 *.sw?
 .claude/
+
+# Working drafts for the dility story (kept outside the site)
+dility-journey-draft-*.md
+dility-journey-draft-v6 (1).md
+dility-journey-draft-v6 (3).md
+claude-code-prompt-portfolio-update.md

@@ -1,0 +1,651 @@
+/* dility journey block (Product Story). Newsreader headings, Geist body,
+   Geist Mono labels, thin rules. Motion is limited to the image dialog,
+   and only under prefers-reduced-motion: no-preference. */
+
+.journey {
+  margin-top: clamp(3rem, 7vw, 5rem);
+  border-top: 2px solid var(--color-ink);
+  padding-top: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.journey__label,
+.journey-mono,
+.journey-step__label,
+.journey-status,
+.journey-dl dt,
+.journey-test__row dt,
+.journey-figures__source,
+.evo__num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-ink-faint);
+}
+
+.journey__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 4.5vw, 2.75rem);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  margin-top: 0.6rem;
+  max-width: 40rem;
+}
+
+/* Timeline sub-blocks */
+.journey__steps {
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.journey-step {
+  display: grid;
+  grid-template-columns: 13rem 1fr;
+  gap: 0.5rem 2rem;
+  padding-block: clamp(1.5rem, 3.5vw, 2.25rem);
+  border-top: var(--rule-thin) solid var(--color-rule);
+}
+
+.journey-step__label {
+  grid-column: 1;
+  padding-top: 0.45rem;
+}
+
+.journey-step__body {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.journey-step:not(:has(.journey-step__label)) .journey-step__body {
+  grid-column: 1 / -1;
+}
+
+.journey-step__heading,
+.journey-sub__title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+}
+
+.journey-step__heading {
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  max-width: 34rem;
+}
+
+.journey-sub__title {
+  font-size: clamp(1.5rem, 3.4vw, 2rem);
+}
+
+.journey-block__title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h4);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  margin-top: clamp(1.5rem, 3.5vw, 2rem);
+}
+
+.journey-text {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-ink-soft);
+  max-width: var(--measure);
+  margin-top: 0.85rem;
+}
+
+.journey-text strong,
+.journey-test__row dd strong {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.journey-bullets {
+  margin-top: 0.75rem;
+  max-width: var(--measure);
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.journey-bullets li {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-ink-soft);
+  margin-top: 0.4rem;
+}
+
+/* The two leap-of-faith tests */
+.journey-tests {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.journey-test {
+  border: var(--rule-thin) solid var(--color-rule-strong);
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.journey-test__title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h4);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  margin-top: 0.3rem;
+}
+
+.journey-test__rows {
+  margin: 0.75rem 0 0;
+}
+
+.journey-test__row {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 0.25rem 1.25rem;
+  padding-block: 0.8rem;
+  border-top: var(--rule-thin) solid var(--color-rule);
+}
+
+.journey-test__row dt {
+  padding-top: 0.2rem;
+}
+
+.journey-test__row dd {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-support);
+  line-height: var(--lh-body);
+  color: var(--color-ink-soft);
+  min-width: 0;
+}
+
+.journey-test__row dd .journey-text {
+  font-size: var(--fs-support);
+  margin-top: 0.75rem;
+}
+
+/* Campaign figures: small, quiet, two labeled sources */
+.journey-figures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem 1.5rem;
+}
+
+.journey-figures__source {
+  margin-bottom: 0.25rem;
+}
+
+.journey-figures ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.journey-figures li {
+  font-size: var(--fs-support);
+  line-height: var(--lh-snug);
+  color: var(--color-ink-soft);
+  padding-block: 0.25rem;
+  border-top: var(--rule-thin) solid var(--color-rule);
+}
+
+/* Testers' quotes: quiet editorial pull-quotes, role only */
+.journey-quotes {
+  margin-top: clamp(1.5rem, 3.5vw, 2rem);
+}
+
+.journey-quote {
+  margin: 1rem 0 0;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--color-rule-strong);
+  max-width: 36rem;
+}
+
+.journey-quote blockquote {
+  margin: 0;
+}
+
+.journey-quote p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.4vw, 1.35rem);
+  line-height: var(--lh-snug);
+  color: var(--color-ink);
+}
+
+.journey-quote figcaption {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-ink-faint);
+  margin-top: 0.4rem;
+}
+
+/* Sub-sections: evolution, rebuild, ecosystem */
+.journey-sub {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  padding-top: clamp(1.5rem, 3.5vw, 2.25rem);
+  border-top: var(--rule-thin) solid var(--color-rule);
+}
+
+.journey-status {
+  display: inline-block;
+  margin-top: 1.1rem;
+  color: var(--color-accent);
+  border: var(--rule-thin) solid var(--color-accent);
+  padding: 0.3rem 0.65rem;
+}
+
+.journey-figure-wrap {
+  margin-top: 1.25rem;
+}
+
+.journey-figure-wrap > .journey-mono {
+  margin-bottom: 0.5rem;
+}
+
+.journey-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-support);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--color-rule-strong);
+}
+
+.journey-link:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+/* Prototype evolution strip: horizontal on desktop, vertical on mobile */
+.evo-scroll {
+  overflow-x: auto;
+  margin-top: 1.25rem;
+}
+
+.evo {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(7.75rem, 1fr);
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.evo__step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  border-top: 2px solid var(--color-ink);
+  padding: 0.9rem 1rem 0.5rem 0;
+  min-width: 0;
+}
+
+.evo__num {
+  color: var(--color-accent);
+}
+
+.evo__text {
+  font-family: var(--font-sans);
+  font-size: var(--fs-support);
+  line-height: var(--lh-snug);
+  color: var(--color-ink);
+}
+
+.evo__note {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  line-height: var(--lh-snug);
+  color: var(--color-ink-faint);
+}
+
+.evo__tba {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-ink-faint);
+  border: var(--rule-thin) dashed var(--color-rule-strong);
+  background: var(--color-surface);
+  padding: 0.3rem 0.5rem;
+}
+
+.evo__image {
+  width: 100%;
+  margin-top: 0.4rem;
+}
+
+/* Ecosystem list */
+.journey-dl {
+  margin: 1rem 0 0;
+}
+
+.journey-dl__row {
+  display: grid;
+  grid-template-columns: 13rem 1fr;
+  gap: 0.25rem 2rem;
+  padding-block: 0.9rem;
+  border-top: var(--rule-thin) solid var(--color-rule);
+}
+
+.journey-dl__row:last-child {
+  border-bottom: var(--rule-thin) solid var(--color-rule);
+}
+
+.journey-dl dd {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-support);
+  line-height: var(--lh-snug);
+  color: var(--color-ink-soft);
+  max-width: var(--measure);
+}
+
+/* Enlargeable images */
+.zoom {
+  margin: 0;
+}
+
+.zoom__trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 44rem;
+  padding: 0;
+  border: var(--rule-thin) solid var(--color-rule-strong);
+  background: var(--color-surface);
+  cursor: zoom-in;
+}
+
+.zoom__trigger img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.zoom__hint {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--color-bg);
+  border: var(--rule-thin) solid var(--color-rule-strong);
+  padding: 0.15rem 0.45rem;
+  color: var(--color-ink-soft);
+}
+
+.zoom__trigger:hover .zoom__hint,
+.zoom__trigger:focus-visible .zoom__hint {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.zoom__caption {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  line-height: var(--lh-snug);
+  color: var(--color-ink-faint);
+  margin-top: 0.6rem;
+  max-width: 40rem;
+}
+
+.zoom--compact .zoom__hint {
+  display: none;
+}
+
+.zoom--compact .zoom__caption {
+  margin-top: 0.4rem;
+}
+
+.zoom-dialog {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-bg);
+}
+
+.zoom-dialog::backdrop {
+  background: rgba(28, 26, 23, 0.92);
+}
+
+html:has(dialog.zoom-dialog[open]) {
+  overflow: hidden;
+}
+
+.zoom-dialog__frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 4rem clamp(0.75rem, 3vw, 2rem) 1.5rem;
+  box-sizing: border-box;
+}
+
+.zoom-dialog__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+}
+
+.zoom-dialog__close {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-nav);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-ink);
+  background: var(--color-bg);
+  border: var(--rule-thin) solid var(--color-bg);
+}
+
+.zoom-dialog__close:hover {
+  background: var(--color-surface-raised);
+}
+
+.zoom-dialog__close:focus-visible {
+  outline: 2px solid var(--color-bg);
+  outline-offset: 3px;
+}
+
+.zoom-dialog__img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 14rem);
+  max-height: calc(100dvh - 14rem);
+  width: auto;
+  height: auto;
+  background: var(--color-bg);
+  object-fit: contain;
+  touch-action: pinch-zoom pan-x pan-y;
+}
+
+.zoom-dialog__caption {
+  align-self: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  line-height: var(--lh-snug);
+  color: var(--color-bg);
+  max-width: min(52rem, 100%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .zoom-dialog[open] .zoom-dialog__content {
+    animation: zoom-in 220ms var(--ease-editorial) both;
+  }
+
+  @keyframes zoom-in {
+    from {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+/* Teaser captions on the Work and home preview cards */
+.teaser-figure {
+  margin: 0;
+}
+
+.teaser-figure figcaption {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  line-height: var(--lh-snug);
+  color: var(--color-ink-faint);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 760px) {
+  .journey-step,
+  .journey-dl__row,
+  .journey-test__row {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-step__label,
+  .journey-step__body {
+    grid-column: 1;
+  }
+
+  /* Evolution strip goes vertical: a numbered list with thin rules */
+  .evo-scroll {
+    overflow-x: visible;
+  }
+
+  .evo {
+    display: block;
+  }
+
+  .evo__step {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 1rem;
+    border-top: var(--rule-thin) solid var(--color-rule);
+    padding: 0.85rem 0;
+  }
+
+  .evo__step:last-child {
+    border-bottom: var(--rule-thin) solid var(--color-rule);
+  }
+
+  .evo__num {
+    min-width: 2rem;
+  }
+
+  .evo__text {
+    flex: 1 1 14rem;
+  }
+
+  .evo__note,
+  .evo__tba,
+  .evo__image {
+    flex-basis: 100%;
+    margin-left: 3rem;
+    width: auto;
+    max-width: calc(100% - 3rem);
+  }
+
+  .evo__tba {
+    flex-basis: auto;
+  }
+
+  .evo__image .zoom__trigger {
+    max-width: 18rem;
+  }
+}
+
+/* Ecosystem list at the bottom of the story: quieter than the main blocks */
+.journey--quiet {
+  border-top: var(--rule-thin) solid var(--color-rule);
+}
+
+.journey--quiet .journey-sub__title {
+  margin-top: 0;
+}
+
+/* Image figures inside story sections */
+.story-figure {
+  margin-top: 1.25rem;
+}
+
+/* Long captions on cards: clamped visually; the full text is in the DOM and in the enlarged dialog */
+.zoom__caption--clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
+}
+
+.journey-inline-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-rule-strong);
+}
+
+.journey-inline-link:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+/* Image in a link card: the image follows the link; a separate Enlarge icon button opens the dialog */
+.zoom__frame {
+  position: relative;
+  max-width: 44rem;
+}
+
+.zoom__link {
+  display: block;
+  border: var(--rule-thin) solid var(--color-rule-strong);
+  background: var(--color-surface);
+}
+
+.zoom__link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.zoom__enlarge {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--color-ink);
+  background: var(--color-bg);
+  border: var(--rule-thin) solid var(--color-rule-strong);
+  cursor: zoom-in;
+}
+
+.zoom__enlarge:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}

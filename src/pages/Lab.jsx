@@ -20,7 +20,7 @@ function LabContent() {
             {item.tools && <p className="lab-entry__stats">Tools: {item.tools}</p>}
             <div className="lab-entry__links">
               {item.links.map((link) => (
-                <a className="text-link" href={link.url} target="_blank" rel="noreferrer" key={link.url}>
+                <a className="text-link" href={link.url} target="_blank" rel="noopener noreferrer" key={link.url}>
                   {link.label} →
                 </a>
               ))}

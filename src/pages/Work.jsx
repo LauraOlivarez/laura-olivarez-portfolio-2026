@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import CompanyHeading from '../components/CompanyHeading'
 import RequireMode from '../components/RequireMode'
-import TeaserPlaceholder from '../components/TeaserPlaceholder'
+import ProjectTeaser from '../components/ProjectTeaser'
 import { projects } from '../data/content'
 
 function WorkContent() {
@@ -14,7 +14,7 @@ function WorkContent() {
         {projects.map((project) => (
           <article className="archive-entry" key={project.slug}>
             <span className="archive-entry__index">{project.number}</span>
-            <div className="archive-entry__body">
+            <div className={`archive-entry__body${project.caseStudies ? ' archive-entry__body--stacked' : ''}`}>
               <div>
                 <p className="archive-entry__meta">
                   {project.dates} · {project.category}
@@ -22,7 +22,7 @@ function WorkContent() {
                 <CompanyHeading project={project} as="h2" className="archive-entry__title" />
                 <p className="company-blurb">{project.companyBlurb}</p>
                 <p className="archive-entry__desc">{project.shortDesc}</p>
-                {project.evidence && (
+                {project.evidence && !project.caseStudies && (
                   <div className="archive-entry__evidence">
                     <div>
                       <span className="archive-entry__evidence-num">{project.evidence.number}</span>
@@ -30,22 +30,15 @@ function WorkContent() {
                     </div>
                   </div>
                 )}
-                <div className="archive-entry__cta">
-                  <Link className="text-link" to={`/product-stories/${project.slug}`}>
-                    Read the product story →
-                  </Link>
-                </div>
+                {!project.caseStudies && (
+                  <div className="archive-entry__cta">
+                    <Link className="text-link" to={`/product-stories/${project.slug}`}>
+                      Read the product story →
+                    </Link>
+                  </div>
+                )}
               </div>
-              {project.teaserImage ? (
-                <img
-                  className="archive-entry__teaser-image"
-                  src={project.teaserImage}
-                  alt={project.teaserImageAlt}
-                  loading="lazy"
-                />
-              ) : (
-                <TeaserPlaceholder text={project.teaserPlaceholder} />
-              )}
+              <ProjectTeaser project={project} />
             </div>
           </article>
         ))}

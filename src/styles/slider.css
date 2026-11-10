@@ -1,0 +1,154 @@
+/* Case study slider (Verivox): side by side when there is room, otherwise a
+   scroll-snap slider with a peek of the next slide. No auto-play. */
+
+.cs-slider {
+  container-type: inline-size;
+  min-width: 0;
+}
+
+.work-preview-card {
+  min-width: 0;
+}
+
+.archive-entry__body--stacked {
+  grid-template-columns: 1fr;
+}
+
+.cs-track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.cs-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cs-slide {
+  flex: 0 0 88%;
+  min-width: 0;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.cs-slide .zoom__trigger,
+.cs-slide .zoom__frame {
+  max-width: none;
+}
+
+.cs-slide__link {
+  display: block;
+  min-height: 44px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cs-slide__title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h4);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+}
+
+.cs-slide__link:hover .cs-slide__title,
+.cs-slide__link:focus-visible .cs-slide__title {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.cs-slide__outcome {
+  display: block;
+  margin-top: 0.6rem;
+}
+
+.cs-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.75rem;
+}
+
+.cs-btn {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: var(--rule-thin) solid var(--color-rule-strong);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.cs-btn:hover:not(:disabled) {
+  background: var(--color-surface);
+}
+
+.cs-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.cs-dots {
+  display: flex;
+}
+
+.cs-dot {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+}
+
+.cs-dot__mark {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-ink);
+  background: transparent;
+}
+
+.cs-dot[aria-current='true'] .cs-dot__mark {
+  background: var(--color-ink);
+}
+
+@container (min-width: 44rem) {
+  .cs-track {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
+
+  .cs-slide {
+    flex: none;
+  }
+
+  .cs-controls {
+    display: none;
+  }
+}
+
+/* Work index on phones: let the track run to the screen edge so the next
+   slide visibly peeks instead of being cut off at the page gutter. */
+@media (max-width: 760px) {
+  .archive-entry__body--stacked .cs-track {
+    margin-right: calc(var(--gutter) * -1);
+    padding-right: var(--gutter);
+    scroll-padding-left: 0;
+  }
+}
+
+@container (min-width: 44rem) {
+  .archive-entry__body--stacked .cs-track {
+    margin-right: 0;
+    padding-right: 0;
+  }
+}

@@ -1,5 +1,7 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import CompanyHeading from '../components/CompanyHeading'
+import ZoomImage from '../components/ZoomImage'
+import DilityJourney, { DilityEcosystem, DilityRebuild } from '../components/DilityJourney'
 import RequireMode from '../components/RequireMode'
 import { productStories, projects } from '../data/content'
 
@@ -35,7 +37,11 @@ function ProductStoryContent() {
 
       {story.sections.map((section) => (
         <div className="story-block" key={section.label || section.problem.slice(0, 20)}>
-          {section.label && <p className="story-block__label">{section.label}</p>}
+          {section.label && (
+            <p className="story-block__label" id={section.anchorId}>
+              {section.label}
+            </p>
+          )}
 
           <div className="story-field">
             <p className="story-field__label">The problem</p>
@@ -53,11 +59,18 @@ function ProductStoryContent() {
             <p className="story-field__label">What I changed</p>
             <p className="story-block__text">{section.change}</p>
             {section.image && (
-              <img className="story-image" src={section.image} alt={section.imageAlt} loading="lazy" />
+              <div className="story-figure">
+                <ZoomImage src={section.image} alt={section.imageAlt} caption={section.imageCaption} />
+              </div>
+            )}
+            {section.figure && (
+              <div className="story-figure">
+                <ZoomImage src={section.figure.image} alt={section.figure.alt} caption={section.figure.caption} />
+              </div>
             )}
           </div>
 
-          <div className="story-field">
+          <div className="story-field" id={section.whyAnchorId}>
             <p className="story-field__label">Why it mattered</p>
             <p className="story-block__text">{section.why}</p>
           </div>
@@ -88,6 +101,12 @@ function ProductStoryContent() {
           {section.closingLine && <p className="story-closing measure">&ldquo;{section.closingLine}&rdquo;</p>}
         </div>
       ))}
+
+      {story.journey && <DilityRebuild journey={story.journey} />}
+
+      {story.journey && <DilityJourney journey={story.journey} />}
+
+      {story.journey && <DilityEcosystem journey={story.journey} />}
 
       <div className="story-footer">
         <Link className="text-link" to="/work">

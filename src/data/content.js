@@ -2,6 +2,10 @@
 // page, read from this single source — no per-mode content duplication.
 
 import verivoxPostSignupTeaser from '../assets/images/verivox-post-signup-teaser.jpg'
+import verivoxMicrocopyBanner from '../assets/images/verivox-microcopy-banner.jpg'
+import dilityRebuildImage from '../assets/images/dility-rebuild-magic-patterns.jpg'
+import dilityWixImage from '../assets/images/dility-wix-early-landing.jpg'
+import dilityGrowthImage from '../assets/images/dility-growth-projection.png'
 
 export const evidence = [
   {
@@ -43,11 +47,28 @@ export const projects = [
       'A leading German comparison platform for energy, telecom, insurance, loans, and financial products, supporting digital comparison and switching experiences for 8M+ customers across high-trust consumer decision journeys.',
     companyUrl: 'https://www.verivox.de/',
     companyNote: null,
-    evidence: { number: '15%', label: 'Completion' },
-    teaserPlaceholder:
-      'COMING SOON: image of the credit sign-up form trust microcopy experiment (15% increase in submissions).',
-    teaserImage: verivoxPostSignupTeaser,
-    teaserImageAlt: 'Before and after comparison of the Verivox post sign-up flow on mobile — the redesigned version consolidates loan details, next steps, and actions into a clearer, less cluttered screen.',
+    // Two separate case studies, each with its own outcome. The 15% belongs
+    // only to the trust microcopy one; the post sign-up process has no number.
+    evidence: null,
+    caseStudies: [
+      {
+        key: 'post-signup',
+        title: 'Post Sign Up Process',
+        storyHash: '#post-signup-process',
+        outcome: { text: 'Less backend work', label: 'Backend maintenance effort' },
+        image: verivoxPostSignupTeaser,
+        alt: 'Before and after comparison of the Verivox post sign-up flow on mobile — the redesigned version consolidates loan details, next steps, and actions into a clearer, less cluttered screen.',
+      },
+      {
+        key: 'microcopy',
+        title: 'Building Trust Through UX Microcopy',
+        storyHash: '#trust-microcopy',
+        outcome: { text: '+15%', label: 'Form submissions' },
+        image: verivoxMicrocopyBanner,
+        alt: "Two mobile screens of the Verivox credit sign-up form. The left screen shows a short reassurance line in the contact details area. The right screen shows a green security banner at the top of the form, above the step indicator.",
+        caption: "The credit sign-up form on Verivox's live site today, showing the two trust elements: a short reassurance line next to the contact fields (left) and a security banner at the top of the form (right). The wording shown is the current live version and may differ from what we first shipped. No 'before' screen is shown, because before the change these elements simply weren't there. Result of the original change: +15% form submissions.",
+      },
+    ],
   },
   {
     slug: 'dility',
@@ -62,8 +83,9 @@ export const projects = [
     companyUrl: null,
     companyNote: '(site no longer live — project concluded)',
     evidence: { number: '0→1', label: 'Ownership' },
-    teaserPlaceholder:
-      "COMING SOON: image of dility's participant onboarding, method library, and agenda creation — the workflows behind the 60→10 minute reduction.",
+    teaserImage: dilityRebuildImage,
+    teaserImageAlt: 'Screenshot of the partially rebuilt dility dashboard.',
+    teaserCaption: 'Dility app, partially rebuilt in Magic Patterns. Work in progress.',
   },
   {
     slug: 'teamworx-security',
@@ -91,6 +113,7 @@ export const productStories = {
     tools: 'Sketch, Miro, InVision, Confluence & Jira',
     sections: [
       {
+        anchorId: 'post-signup-process',
         label: 'Section A — Post Sign Up Process',
         problem:
           'As more banks with different sign-up requirements were added to the database over time, the existing workflow and backend became too complex to keep up — an overwhelming, outdated flow with no clear step process or recognized customer service.',
@@ -104,6 +127,7 @@ export const productStories = {
         imageAlt: 'Before and after comparison of the Verivox post sign-up flow on mobile — the redesigned version consolidates loan details, next steps, and actions into a clearer, less cluttered screen.',
       },
       {
+        anchorId: 'trust-microcopy',
         label: 'Section B — Building Trust Through UX Microcopy',
         problem:
           'Users were hesitant to complete the credit sign-up form due to missing data security messaging.',
@@ -118,6 +142,11 @@ export const productStories = {
           },
           { text: 'That is a scope boundary, not a gap.' },
         ],
+        figure: {
+          image: verivoxMicrocopyBanner,
+          alt: "Two mobile screens of the Verivox credit sign-up form. The left screen shows a short reassurance line in the contact details area. The right screen shows a green security banner at the top of the form, above the step indicator.",
+          caption: "The credit sign-up form on Verivox's live site today, showing the two trust elements: a short reassurance line next to the contact fields (left) and a security banner at the top of the form (right). The wording shown is the current live version and may differ from what we first shipped. No 'before' screen is shown, because before the change these elements simply weren't there. Result of the original change: +15% form submissions.",
+        },
         evidenceHeadline: { number: '15%', label: 'Form submissions' },
       },
     ],
@@ -138,10 +167,11 @@ export const productStories = {
           'An early-stage SaaS platform needed to translate complex, human-facilitated workshop and collaboration workflows into intuitive, scalable digital experiences.',
         change:
           'Ran continuous user research and usability testing loops to refine workflows; introduced agile working practices; shaped and communicated the product vision and value proposition to investors; represented the company externally, negotiating strategic partnerships.',
+        whyAnchorId: 'why-it-mattered',
         why: 'After an early pivot (the original concept was too narrow) and a year-long delay before that pivot, the team confronted a defining question during their last accelerator — "Are we solving the one problem that causes enough pain for people to pay for it?" They realized they\'d been solving too many problems instead of the one that mattered.',
         evidenceNote: [
           { text: '20% increase in user satisfaction.' },
-          { text: '5 Letters of Intent (LOIs) validated early market demand.' },
+          { text: '6 letters of intent validated early market demand.' },
           {
             text: 'Reduced workshop setup time from roughly 60 minutes to 10 by simplifying fragmented preparation workflows and creating reusable product patterns.',
             id: 'prep-time-60-10',
@@ -154,7 +184,7 @@ export const productStories = {
         ],
         evidenceStats: [
           { number: '20%', label: 'User satisfaction' },
-          { number: '5', label: 'Letters of Intent' },
+          { number: '6', label: 'Letters of Intent' },
           { number: '60→10', label: 'Prep time (minutes)' },
           { number: '25%', label: 'Stakeholder feedback' },
           { number: '30+', label: 'Research sessions' },
@@ -162,6 +192,242 @@ export const productStories = {
         closingLine: 'Recurring users are the real proof of value — not just for investors, but for yourself.',
       },
     ],
+    // The journey block (source: dility-journey-draft-v6.md, sections B, D, E,
+    // F, G). Text in **double asterisks** renders bold. The v6 draft has no
+    // inline [CONFIRM] markers; open points are listed in the hand-off notes.
+    journey: {
+      title: 'The journey: from round table to code',
+      roleLabel: 'Co-Founder & Head of UX Strategy',
+      steps: [
+        {
+          label: 'The gap',
+          heading: 'A round table, and a tool nobody had.',
+          paragraphs: [
+            'In November 2020 I facilitated a UX round table on human-centered design. One thing became clear fast: no single tool combined the functions creators in every field needed, from user research and UX to project management, HR and customer support.',
+            'Afterwards, a participant approached me with the idea of creating dility. That started the whole journey.',
+          ],
+        },
+        {
+          label: 'Proving there was something there',
+          heading: 'Proof of market first, product second.',
+          paragraphs: [
+            'I joined as an advisor on the user experience side, and the first team formed around a startup advisor and me. The startup advisor also helped us establish our OKRs, which guided the work from the start.',
+            'Before building anything, we ran two leap-of-faith tests.',
+          ],
+          tests: [
+            {
+              label: 'Test 1',
+              title: 'Do competing products exist?',
+              rows: [
+                {
+                  label: 'Assumption',
+                  text: 'At least five competing products exist, including in-house tools at larger companies.',
+                },
+                {
+                  label: 'How we checked',
+                  text: 'Market research on existing programs, plus asking larger companies directly whether they use internal programs that cover all these areas.',
+                },
+                {
+                  label: 'Goal',
+                  text: 'Get an overview of the market and decide whether our idea could stand up to it. The test counted as passed if we found five competing products within 2 hours of online research and 3 hours of company inquiries.',
+                },
+                {
+                  label: 'Result',
+                  text: '**Passed.** We found eight. In-house approaches and frameworks at IBM (Design Thinking framework and toolkit), IDEO (Field Guide to Human-Centered Design), Designaffairs (a set of tools and programs) and HubSpot (an internal tool for automated validation of results). External products: Procontext, Maze, Optimizely and SAP Build.',
+                },
+              ],
+            },
+            {
+              label: 'Test 2',
+              title: 'Is there interest from users?',
+              rows: [
+                {
+                  label: 'Hypothesis',
+                  text: '60% of visitors would spend 1–2 minutes on the site, 5% would try to register, and 5% would use the feedback option.',
+                },
+                {
+                  label: 'How we checked',
+                  text: 'A LinkedIn ad campaign ran from **19 to 28 January 2021**.',
+                },
+                {
+                  label: 'Result',
+                  figures: [
+                    {
+                      source: 'LinkedIn campaign data',
+                      items: [
+                        '4,500 impressions',
+                        '26 clicks',
+                        'Click-through rate of 0.57% (average: 0.44%)',
+                        '84 website visits',
+                        'About 50 of them (60%) stayed longer than a minute',
+                      ],
+                    },
+                    {
+                      source: 'Site analytics',
+                      items: ['52 visitors', 'Average stay of 48 seconds, under our 1–2 minute target'],
+                    },
+                  ],
+                  paragraphs: [
+                    'We read this as a mixed signal. People were curious enough to click, but once on the site they stayed less than we had hoped. That was a first hint of what our user tests confirmed later: the topic was too narrow.',
+                    "We also knew that an ad campaign with limited resources, and therefore limited time, is not strong proof. But when you don't have other options, you take what you get.",
+                  ],
+                },
+              ],
+            },
+          ],
+          afterParagraphs: [
+            'Over the following months we worked on a digital design thinking platform, meant to make design thinking easy to access, time-saving and understandable for everyone. My co-founder and I still had full-time jobs, so progress was slow but steady, and the time was as much about learning how a startup works as about building the solution.',
+            'In April 2021, my experience in two different worlds (agency and e-commerce) helped me shape the first rough structure for the first wireframes. We took them to one of our experts for feedback.',
+          ],
+        },
+        {
+          label: 'What the first tests changed',
+          heading: 'Two signals, one conclusion.',
+          paragraphs: [
+            "Finding the right users was hard: the topic was specific, and testers had to meet certain criteria. Cold messages on LinkedIn failed. By January 2022 we had one user, an organizational designer from a founder's network.",
+            'After that first round of user testing, together with the results of the LinkedIn campaign, we learned something valuable. The campaign showed interest, but the testing showed what people actually needed, and focusing only on design thinking might not be the right topic.',
+            'At the beginning of 2022 we shifted to a more specific, and ultimately more scalable, focus: helping facilitators and moderators **save time preparing, running and analyzing digital workshops**. Later user tests pointed to the two parts that stood out most: **participant onboarding** and **agenda preparation**.',
+          ],
+          subHeading: 'How we tested.',
+          subParagraphs: [
+            'Over the whole journey we ran **30+ user research sessions** and spent **1,200+ hours on validation**, **60 of them in user testing with a prototype**. We followed the well-known rule of five: about five testers surface roughly 80–85% of usability issues. That is why we never went for large test groups. As a team of three, we wouldn\'t even have had the time to act on the results.',
+          ],
+          quotes: {
+            label: 'What testers said',
+            items: [
+              { quote: 'The stakeholder onboarding is AMAZING!', role: 'Agency owner' },
+              {
+                quote: 'Very different from what I am used to, but dility is WAY more complete!',
+                role: 'UX design consultant',
+              },
+              { quote: 'I love the toolbox! I loved it from the start and I still love it!', role: 'User researcher' },
+            ],
+          },
+        },
+        {
+          label: 'Talking to people we already knew',
+          heading: 'The obvious idea I almost missed.',
+          paragraphs: [
+            'I was still looking for users when I asked myself: why not talk to people I already know? It was so obvious that I hadn\'t thought of it. I reached out to a former colleague from Verivox who works as a user researcher, and later to another former colleague, a service designer and agency co-founder. He joined our "user alliance", and the idea came up to test dility in his live environment. A steady flow of feedback and implementation followed.',
+          ],
+        },
+        {
+          heading: 'Structure and a deadline',
+          paragraphs: [
+            'From June to August 2022 I took the Y Combinator Startup School course to go deeper into the startup world. In August 2022 we built a rough roadmap next to the monthly OKRs. The goal was a **coded MVP by October**. That turned out to be challenging, but we went ahead and attended both **Slush 2022** and **Wolves Summit (online)** as dility.',
+          ],
+          plan: {
+            intro: 'We prepared Slush like a project. Our plan:',
+            items: [
+              {
+                lead: 'Meetings:',
+                text: '7 scheduled with investors, sellers and solution providers, with the whole itinerary planned.',
+              },
+              {
+                lead: 'Product demo:',
+                text: 'show a semi-live version of the web app and run real-time product demos for marketing and investor events during Slush.',
+              },
+              {
+                lead: 'Cloud credits:',
+                text: 'secure free cloud credits to replace our expired Linode free tier.',
+              },
+            ],
+          },
+          afterParagraphs: [
+            'At Wolves Summit, online, the goal was to gather feedback, find collaborations and meet potential clients.',
+          ],
+        },
+        {
+          label: '2023: Tickets paid, app not launched',
+          heading: 'Reality check in Helsinki.',
+          paragraphs: [
+            "We attended **Slush again in 2023**, with the goal of having a live app in November 2023. Problems launching the website meant we couldn't launch the application in time. The tickets were already paid for, so we went anyway to look for funding. That's where reality hit: **letters of intent don't count for investors**. What counted was active, recurring users and money coming in, and in 2023 we had neither yet.",
+            // [CONFIRM] v6 (3): "That year we also joined Wolves Summit online again." is only added if
+            // Wolves Summit was attended again in 2023. Left out until confirmed.
+            'Alongside the product we were building **servicedesign.today**, a free community and knowledge hub for service designers (more in the [Lab](/lab)).',
+          ],
+        },
+        {
+          label: '2024: The last attempt',
+          heading: 'One more try, and an honest stop.',
+          paragraphs: [
+            'In 2024 we worked with **i3P, the Innovative Companies Incubator of Politecnico di Torino**, which led to a 49-page business plan, and made a last attempt by joining the **Red Brick accelerator**. It made clear that, with the limited resources we had, we could not bootstrap the project. We discontinued dility at the end of 2024.',
+          ],
+          figure: {
+            label: 'The growth projection',
+            image: dilityGrowthImage,
+            alt: 'Slide from the 2024 pitch showing projected users and revenue over four years.',
+            caption: 'Projection from our 2024 pitch, prepared with i3P. Never realized.',
+          },
+          afterParagraphs: [
+            'The accelerator is also where we asked the question that defines the Product Story: "Are we solving the one problem that causes enough pain for people to pay for it?"',
+          ],
+          pivotLink: true,
+        },
+      ],
+      lessons: {
+        label: 'What we took with us',
+        items: [
+          'Letters of intent and warm feedback are not the same as recurring use.',
+          'Speed matters: a year before the pivot was too long.',
+          'Recurring users are the real proof of value, not just for investors, but for yourself.',
+        ],
+      },
+      reflection: {
+        text: 'Read the full reflection: "A Candid Chronicle of Three Extraordinary Years" (LinkedIn)',
+        url: 'https://www.linkedin.com/pulse/candid-chronicle-three-extraordinary-years-laura-olivarez-jysef/',
+      },
+      early: {
+        image: dilityWixImage,
+        alt: 'Screenshot of the early dility landing page headed "Digital Collaboration Platform".',
+        caption: 'The early dility landing page: how we first described the product.',
+      },
+      evolution: {
+        title: 'Prototype evolution',
+        steps: [
+          { text: 'Pain-point mapping and evaluation' },
+          { text: 'User journeys' },
+          { text: 'Paper drawings' },
+          { text: 'Miro: low-fidelity wireframes' },
+          { text: 'First website (Wix): the early landing page', image: 'early' },
+          { text: 'Figma click-dummies, higher fidelity, for user testing', toBeAdded: 'To be added' },
+          { text: 'Coded MVP: Next.js and React, Supabase, Google Cloud', note: 'The code no longer exists.' },
+          { text: 'Rebuild in Magic Patterns: the partially rebuilt app', image: 'rebuild' },
+        ],
+      },
+      rebuild: {
+        heading: 'A bite-sized taste of the rebuild',
+        paragraphs: [
+          "dility was coded, but the code no longer exists, which is why the product isn't live anymore. To show what we built and thought through, I'm rebuilding it in Magic Patterns, starting from the Figma prototype we used for testing.",
+          "What you can open is a **rebuilt and updated dashboard**. It doesn't show everything yet. Think of it as a small taste, and I'll improve it step by step.",
+        ],
+        linkLabel: 'Open the rebuild in Magic Patterns',
+        linkUrl: 'https://www.magicpatterns.com/c/6c24etzq4xk6lbjrqahoyy/preview',
+        status: 'WORK IN PROGRESS · A TASTE, NOT THE FULL PRODUCT',
+        image: dilityRebuildImage,
+        alt: 'Screenshot of the partially rebuilt dility dashboard.',
+        caption: 'Dility app, partially rebuilt in Magic Patterns from the Figma prototype. Work in progress.',
+      },
+      ecosystem: {
+        title: 'Who we talked to, events, support',
+        rows: [
+          { label: 'Events', text: 'Slush (Helsinki, 2022 and 2023), Wolves Summit (online), SaaStock (Austin)' },
+          {
+            label: 'Programs',
+            text: 'Y Combinator (Startup School, 2022; co-founder matching); i3P, the Innovative Companies Incubator of Politecnico di Torino (market data and a 49-page business plan, 2024); Red Brick accelerator (2024)',
+          },
+          {
+            label: 'Advisors',
+            text: 'Four in total, across startups, service design, user experience and, toward the end, AI integration. Not all stayed for the whole journey.',
+          },
+          {
+            label: 'Early supporters',
+            text: 'A user alliance of practicing designers; an expert who gave feedback on the first wireframes',
+          },
+          { label: 'Agencies (talked to)', text: 'Six agencies in Poland, Austria, the UK, Spain and Finland' },
+        ],
+      },
+    },
   },
   'teamworx-security': {
     name: 'TeamWorx Security',
@@ -286,6 +552,19 @@ export const labItems = [
       },
     ],
   },
+  {
+    title: 'servicedesign.today',
+    // Label from the draft (section J), shown in the same tag slot as the other entries' status.
+    status: 'Community and knowledge hub',
+    since: null,
+    desc: 'A free, global knowledge hub for service designers, built alongside dility and still live and maintained. It collects templates and guides for methods like journey maps, service blueprints, stakeholder maps and personas, curated guidelines and books, a small library of articles, and a form for contributing resources. By Q4 2026 the community around it counted 533 people. We built it as a team; my part was knowledge gathering and outreach.',
+    stats: '533 people in the community (Q4 2026)',
+    tools: null,
+    links: [
+      { label: 'Visit servicedesign.today', url: 'https://servicedesign.today/' },
+      { label: 'Follow on LinkedIn', url: 'https://www.linkedin.com/company/service-design-today' },
+    ],
+  },
 ]
 
 export const timeline = [
@@ -304,7 +583,7 @@ export const rooms = [
     key: 'lab',
     label: 'Lab',
     path: '/lab',
-    desc: 'Personal experiments outside client work: an AI-generated relaxation channel, an affirmation-driven music project, and a first dive into data analytics.',
+    desc: 'Personal experiments outside client work: an AI-generated relaxation channel, an affirmation-driven music project, a first dive into data analytics, and a community and knowledge hub for service designers.',
   },
   { key: 'about', label: 'About', path: '/about', desc: 'Who I am and how I got here.' },
   {
